@@ -1,0 +1,230 @@
+:root{
+    --discover-delay: 0s;
+}
+
+.hero-text-section{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// Main Text
+
+span.hero-text{
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: var(--title-size);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    line-height: 6rem;
+    display: flex;
+    display: inline-block;
+}
+
+
+span.highlight{
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: var(--title-size);
+    position: relative;
+    z-index: 1;
+    transition: $transition-time all ease;
+
+    &:hover{
+        &::before{
+            scale: 1.1;
+        }
+
+        &::after{
+            scale: 1.1;
+        }
+    }
+}
+
+span.highlight::before{
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -50%;
+    height: 250px;
+    width: 250px;
+    background: #fb6313;
+    // background: #f25f16;
+    z-index: -1;
+    border-radius: 100rem;
+    filter: blur(30px);
+    animation: moveInfinity 10s infinite ease;
+    animation-delay: 1s;
+    transition: $transition-time+0.3 all ease;
+}
+
+span.highlight::after{
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -30%;
+    height: 200px;
+    width: 200px;
+    background: #f4cd5f;
+    z-index: -1;
+    border-radius: 100rem;
+    filter: blur(30px);
+    animation: moveInfinity 10s infinite ease;
+    transition: $transition-time+0.3 all ease;
+}
+
+@keyframes moveInfinity {
+    0%{
+        transform-origin: 52% 53%;
+        transform: rotate(0deg);
+    }
+
+    33%{
+        transform-origin: 52% 53%;
+        transform: rotate(360deg);
+    }
+
+    66%{
+        transform-origin: 53% 52%;
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform-origin: 52% 53%;
+        transform: rotate(360deg);
+    }
+}
+
+// Go down
+.go-down{
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    bottom: 0;
+    border-bottom: 1px $matt-black solid;
+    display: inline-block;
+    // padding: 0.2rem 1rem 0.2rem 0rem;
+    width: 130px;
+    transform: rotate(90deg) translateX(-50%) translateY(300%);
+    cursor: pointer;
+    transition: $transition-time all ease;
+
+    p{
+        font-family: oswald;
+        letter-spacing: 0.4rem;
+        position: relative;
+        left: -2rem;
+        transition: $transition-time all ease;
+    }
+}
+
+.godown-hover-animation{
+    &:hover{
+        p{
+            left: 0rem;
+            letter-spacing: 0.2rem;
+        }
+    }
+}
+
+$percent_change: 60%;
+
+.change-into-discover-header{
+    cursor: text;
+    // background: lightcoral;
+    display: inline-block;
+    width: auto;
+    animation: turn_into_header_bottom 3s 1 ease forwards;
+    animation-delay: var(--discover-delay);
+    animation-play-state: paused;
+    background: linear-gradient(180deg, transparent 0%, transparent $percent_change, $matt-black $percent_change, $matt-black 100%);
+    background-size: 200% 200%;
+
+
+    p{
+        animation: turn_into_header_text 3s 1 ease forwards;
+        animation-delay: var(--discover-delay);
+        animation-play-state: paused;
+        background-color: #f3ec78;
+        background-image: linear-gradient(180deg, $matt-black 0%, $matt-black $percent_change, $bg $percent_change, $bg 100%);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+    }
+}
+
+@keyframes turn_into_header_bottom{
+    0%{
+        padding: 0 0;
+        transform: rotate(90deg) translateX(-50%) translateY(300%);
+    }
+
+    30%{
+        padding: 0 0;
+        transform: rotate(0deg) translateX(-50%) translateY(-20%);
+    }
+
+    60%{
+        padding: 0 0;
+    }
+
+    70%{
+        padding: 0 3rem;
+    }
+
+    75%{
+        padding: 0 3rem;
+        background-position: 100% 0;
+        
+    }
+
+    100%{
+        padding: 0 3rem;
+        transform: rotate(0deg) translateX(-50%) translateY(-20%);
+        background-position: 100% $percent_change;
+    }
+}
+
+@keyframes turn_into_header_text {
+    0%{
+        left: -2rem;
+        font-size: 1rem;
+    }
+
+    30%{
+        left: 0rem;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    60%{
+        left: 0rem;
+        font-size: var(--title-size);
+        font-weight: 700;
+    }
+
+    75%{
+        left: 0rem;
+        font-size: var(--title-size);
+        font-weight: 700;
+        background-position: 100% 0;
+    }
+
+    100%{
+        left: 0rem;
+        font-size: var(--title-size);
+        font-weight: 700;
+        background-position: 100% $percent_change;
+    }
+}
+
+@keyframes cover_half {
+    0%{
+
+    }
+}

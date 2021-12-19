@@ -1,0 +1,34 @@
+nav{
+    // background: lightgreen;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1rem 2rem;
+    font-size: 0.9rem;
+
+    // Title
+    p{
+        font-size: 1.7rem;
+        font-weight: 600;
+
+        span.extention{
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+    }
+
+    // Links
+    a{
+        text-transform: uppercase;
+        color: $matt-black;
+        text-decoration: none;
+        transition: $transition-time all ease;
+
+
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.discover-section{
+    position: absolute;
+    inset: 0;
+    margin-top: 100vh;
+    // background: lightcoral;
+    padding: 2rem 5rem;
+    height: 80vh;
+    display: flex;
+}
+
+.discover-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+
+    button{
+        margin-top: 2rem;
+        // width: 50%;
+    }
+}
+
+.discover-text{
+    font-family: oswald;
+    text-align: right;
+    display: inline-block;
+    font-size: var(--micro-title-size);
+}
+
+.discover-right{
+    // background: lightcyan;
+    opacity: 0;
+}

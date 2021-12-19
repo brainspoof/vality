@@ -1,0 +1,34 @@
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBX-opolrVfn4I5FfLAD1F250J59AanMec",
+    authDomain: "vality-shubham.firebaseapp.com",
+    projectId: "vality-shubham",
+    storageBucket: "vality-shubham.appspot.com",
+    messagingSenderId: "933626859942",
+    appId: "1:933626859942:web:9b8d0212738d4960fc3f67",
+    measurementId: "G-XFSB69ENPC"
+};
+
+// Initialize Firebase
+const app = firebase.initializeApp(firebaseConfig);
+
+function postEmail(){
+    let cloudDB = firebase.firestore();
+    cloudDB.collection("emails").doc(document.querySelector("#email").value).set(
+        {
+            name: document.querySelector("#name").value,
+            email: document.querySelector("#email").value,
+        }
+    )
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id)
+    })
+}
+
+// IP ADDRESS
+// https://www.cloudflare.com/cdn-cgi/trace
+// http://www.geoplugin.net/json.gp
+// https://api.hackertarget.com/geoip/?q=59.99.157.96
+// https://ipapi.co/json/
+// http://ip-api.com/json
+

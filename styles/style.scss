@@ -1,0 +1,107 @@
+// @import url("/home/shubham/Shubham/vality/fonts/Graphik-Font-Family/GraphikBlack.otf");
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600&display=swap');
+
+
+$matt-black: #171717;
+$white: #fff;
+$bg: #eaeaea;
+$transition-time: 0.2s;
+
+:root{
+    --title-size: 5rem;
+    --mini-title-size: 4rem;
+    --micro-title-size: 3rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body{
+    background: $bg;
+    color: $matt-black;
+    font-family: Urbanist;
+}
+
+.btn{
+    padding: 0.7rem 1.7rem;
+    background: $white;
+    // border: 1px $matt-black solid;
+    border: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    .arrow{
+        transition: $transition-time all ease;
+        position: relative;
+        left: 0;
+    }
+
+    &:hover{
+        .arrow{
+            position: relative;
+            left: 6px;
+        }
+    }
+
+    &:active{
+        .arrow{
+            position: relative;
+            left: 15px;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.arrow{
+    $width: 20px;
+    display: inline-block;
+    width: $width;
+    height: 15.75px*$width/40px;
+    margin-left: 1rem;
+    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='40' height='14'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z'/%3E%3C/svg%3E");
+    background-image: url('../arrow-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+// Selection Color
+::-moz-selection { /* Code for Firefox */
+    color: $bg;
+    background: $matt-black;
+}
+
+::selection {
+    color: $bg;
+    background: $matt-black;
+}
+
+// Invert Text
+span.invert{
+    font-family: oswald;
+    font-weight: 600;
+    font-size: var(--mini-title-size);
+    color: $bg;
+    background: $matt-black;
+    padding: 0rem 1rem;
+
+    &::selection{
+        color: $matt-black;
+        background: $bg;
+    }
+}
+
+
+
+@import './nav';
+@import './hero';
+@import './discover';
